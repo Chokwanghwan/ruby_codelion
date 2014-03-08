@@ -35,7 +35,7 @@ class WallController < ApplicationController
   end
   
   def delete_complete
-    p = Post.fint(params[:id])
+    p = Post.find(params[:id])
     p.destroy
 
     redirect_to "/wall/posts"
