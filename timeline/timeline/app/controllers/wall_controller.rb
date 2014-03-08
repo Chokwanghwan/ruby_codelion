@@ -31,7 +31,7 @@ class WallController < ApplicationController
   end
 
   def delete
-    @post_edit = Post.find(params[:id])
+    @post_delete = Post.find(params[:id])
   end
 
   def posts
