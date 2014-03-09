@@ -20,6 +20,9 @@ class UserController < ApplicationController
       redirect_to :back
     end
   end
+
+  def loing
+  end
 end
 
 
