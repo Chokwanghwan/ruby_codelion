@@ -55,6 +55,33 @@ class WallController < ApplicationController
     redirect_to "/wall/posts"
   end
 
+  def edit_comment
+    @post_edit_comment = Comment.find(params[:id])
+  end
+
+  def edit_comment_complete
+    c = Comment.find(params[:id])
+    c.name = params[:writer_edit_comment]
+    c.content = params[:content_edit_comment]
+    if c.save
+      redirect_to "/wall/posts"
+    else
+      flash[:alert] = c.errors[:content][0]
+      redirect_to :back
+    end
+  end
+
+  def delete_comment
+    @post_delete_comment = Comment.find(params[:id])
+  end
+
+  def delete_comment_complete
+    c = Comment.find(params[:id])
+    c.destroy
+
+    redirect_to "/wall/posts"
+  end
+
   def posts
     @posts = Post.all
   end
