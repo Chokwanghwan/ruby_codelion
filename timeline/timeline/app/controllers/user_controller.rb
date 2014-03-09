@@ -1,7 +1,7 @@
 class UserController < ApplicationController
   def signup
   end
-end
+
 
   def signup_complete
     u = User.new
@@ -10,7 +10,7 @@ end
       u.password = params[:password]
       if u.save
         flash[:alert] = "Successfully signed up."
-        redirect_to "wall/posts"
+        redirect_to "/wall/posts"
       else
         flash[:alert] = u.errors.values.flatten.join(' ')
         redirect_to :back
@@ -20,6 +20,6 @@ end
       redirect_to :back
     end
   end
-  end
+end
 
 
