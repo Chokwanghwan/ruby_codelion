@@ -1,4 +1,6 @@
 class FoodsController < ApplicationController
+  before_action :login_check
+  skip_before_action :login_check, :only => [:posts, :posts_category, :show]
   def posts
     @posts = Post.all
   end
@@ -26,6 +28,7 @@ class FoodsController < ApplicationController
 
   def write_complete
     post = Post.new
+    post.user_id = session[:user_id]
     post.category = params[:post_category]
     post.title = params[:post_title]
     post.content = params[:post_content]

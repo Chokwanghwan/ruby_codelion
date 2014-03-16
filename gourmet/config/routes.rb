@@ -1,8 +1,8 @@
 Gourmet::Application.routes.draw do
   get "users/signup"
   post "users/signup_complete"
-  get "users/ligin"
-  get "users/login_complete"
+  get "users/login"
+  post "users/login_complete"
   get "users/logout_complete"
   root 'foods#posts'
   get "/:category" => 'foods#posts_category'
