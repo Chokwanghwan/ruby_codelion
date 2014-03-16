@@ -1,7 +1,9 @@
-<div>
-  <h2><%= @category %>리스트입니다.</h2>
+<div class="container">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h3 class="panel-title"><%= @category %> 리스트 입니다.</h3>
+    </div>
+  </div>
+
+  <%= render :partial => "foods/posts" %>
 </div>
-
-<hr>
-
-<%= render :partial => "foods/posts" %>
