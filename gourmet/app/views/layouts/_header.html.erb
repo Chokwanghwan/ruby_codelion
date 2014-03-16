@@ -1,7 +1,25 @@
-<h4><a href="/">Kwanggoo 맛집 평가</a> || <a href="/korean">한식</a> | <a href="/japanese">일식</a> | <a href="/chinese">중식</a> | <a href="western">양식</a> || <a href="/foods/write">글쓰기</a> ||
-<% if session[:user_id].nil? %>
-<a href="/users/signup">회원가입</a> | <a href="/users/login">로그인</a>
-<% else %>
-<a href="/users/logout_complete">로그아웃</a>
-<% end %>
-</h4>
+<div class="container">
+  <h1 class="gourmet-title"><a class="gourmet-title-link" href="/">Kwanggoo 맛집 평가</a></h1>
+</div>
+
+<nav class="navbar navbar-default" role="navigation">
+  <div class="container">
+    <ul class="nav navbar-nav navbar-left">
+      <li><a href="/korean">한식</a></li>
+      <li><a href="/japanese">일식</a></li>  
+      <li><a href="/chinese">중식</a></li>  
+      <li><a href="/western">양식</a></li>  
+      <li><a href="/foods/write">글쓰기</a></li> 
+    </ul>
+
+    <ul class="nav navbar-nav navbar-right">
+      <% if session[:user_id].nil? %>
+        <li><a href="/users/signup">회원가입</a></li>
+        <li><a href="/users/login">로그인</a></li>
+      <% else %>
+        <li><a href="/users/logout_complete">로그아웃</a></li>
+      <% end %>
+    </ul>
+  </div>
+</nav>
+
