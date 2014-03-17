@@ -1,16 +1,32 @@
-<p><%= flash[:alert] %></p>
-<h2>맛집 추가하기</h2>
+<div class="container">
+  <% if !flash[:alert].nil? %>
+    <div class="alert alert-danger">
+      <%= flash[:alert] %>
+    </div>
+  <% end %>
+
+  <div class="row">
+    <div class="col-md-4">
+    </div>
+    <div class="col-md-4 text-center">
+      <h3 class="form-heading">맛집 추가하기</h3>
 
 <form action="/foods/write_complete" method="post" enctype="multipart/form-data">
-  <p style="color: #ff0000">분류:
+  <p>+ 분류
   <select name="post_category">
     <option value="한식">한식</option>
     <option value="일식">일식</option>
     <option value="중식">중식</option>
     <option value="양식">양식</option>
-  </select>
-  <p>제목: <input type="text" name="post_title" placeholder="제목을 입력하세요."></p>
-  <p>내용: <textarea name="post_content" placeholder="내용을 입력하세요."></textarea></p>
-  <p>사진 업로드: <input type="file" name="image"</p>
-  <input type="submit", value="추가하기">
+  </select></p>
+  <p><input class="form-input" type="text" name="post_title" placeholder="제목을 입력하세요."></p>
+  <p><textarea class="form-textarea" name="post_content" placeholder="내용을 입력하세요."></textarea></p>
+  <p>+ 사진 업로드</p>
+  <p><input type="file" name="image"</p>
+  <p><input class="btn btn-lg btn-block" type="submit" value="추가하기"></p>
 </form>
+</div>
+<div class="col-md-4">
+</div>
+</div>
+</div>
